@@ -1,4 +1,4 @@
-# Проект автоматизации API для сервиса бронирования
+# Проект автоматизации тестирования API для сервиса бронирования
 
 ## Инструменты и технологии
 
@@ -19,11 +19,24 @@
    ```bash
    pip install -r requirements.txt
 3. Запустите тесты с формированием Allure-отчёта:
-      ```bash
-      pytest -v -n auto --alluredir=allure-results
+   ```bash
+   pytest -v -n auto --alluredir=allure-results
 4. Сгенерируйте и откройте отчет локально:
    ```bash
    allure serve allure-results
+
+### Сборка и запуск через Docker
+
+1. Соберите и запустите контейнеры одной командой:
+
+   ```bash
+   docker-compose up --build
+2. Ожидайте, пока контейнер завершит прогоны и поднимет сервер для отчёта.
+По умолчанию отчёт становится доступен по адресу: http://localhost:8080
+   
+3. Остановка и очистка окружения: 
+   ```bash
+   docker-compose down
 
 ## Отчёты Allure
 
